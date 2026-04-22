@@ -11,4 +11,6 @@ jobs:
       - name: build
         run: docker build -f Dockerfile.dev . -t obrat/fastauth:latest
       - name: push image
-        run: docker push obrat/fastauth:latest 
+        run: 
+          docker login -u obrat -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker push obrat/fastauth:latest 
