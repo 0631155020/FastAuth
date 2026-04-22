@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@4
+        uses: actions/checkout@2
 
       - name: build
         run: docker build ./api/ -t obrat/fastauth:latest
