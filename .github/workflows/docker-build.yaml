@@ -9,6 +9,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: build
-        run: docker build ./api/ -t obrat/fastauth:latest
+        run: docker build . -t obrat/fastauth:latest
       - name: push image
         run: docker push obrat/fastauth:latest 
