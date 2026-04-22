@@ -1,0 +1,14 @@
+name: Build and Push Docker Image to Docker Hub
+on:
+  [workflow_dispatch]
+jobs:
+  publish-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@4
+
+      - name: build
+        run: docker build ./api/ -t obrat/fastauth:latest
+      - name: push image
+        run: docker push obrat/fastauth:latest 
